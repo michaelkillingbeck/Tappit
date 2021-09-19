@@ -1,0 +1,57 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <div class='row'>
+            <label class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" value={{person?.firstName}}>
+            </div>
+        </div>
+
+        <div class='row'>
+            <label class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" value={{person?.lastName}}>
+            </div>
+        </div>
+
+        <div class='row'>
+            <label class="col-sm-2 control-label">Enabled</label>
+            <div class="col-sm-4">
+                <input class="form-check-input" type="checkbox" [checked]='person?.isEnabled' />
+            </div>
+        </div>
+
+        <div class='row'>
+            <label class="col-sm-2 control-label">Valid</label>
+            <div class="col-sm-4">
+                <input class="form-check-input" type="checkbox" [checked]='person?.isValid' />
+            </div>
+        </div>
+
+        <div class='row'>
+            <label class="col-sm-2 control-label">Authorised</label>
+            <div class="col-sm-4">
+                <input class="form-check-input" type="checkbox" [checked]='person?.isAuthorised' />
+            </div>
+        </div>
+
+        <div class='row'>
+            <label class="col-sm-2 control-label">Favourite Sports</label>
+            <div class='row'>
+                <div *ngFor='let sport of person.favouriteSportsDetails'>
+                    <input  class="form-check-input" type="checkbox" checked={{sport.active}} />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='card-footer'>
+        <button class='btn btn-outline-secondary'
+                style='width:80px'
+                (click)='navigateBack()'>
+                Back
+        </button>
+      </div>
+</div>

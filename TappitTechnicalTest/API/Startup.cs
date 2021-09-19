@@ -35,7 +35,7 @@ namespace API
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<ISportRepository, SportRepository>();
 
-
+            services.AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -43,14 +43,14 @@ namespace API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-
-                app.UseSwaggerUI(swagger =>
-                {
-                    swagger.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                });
-
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(swagger =>
+            {
+                swagger.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseRouting();
 
