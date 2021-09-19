@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TappitTechnicalTest/.vs/TappitTechnicalTest
+/TappitTechnicalTest/API/bin/Debug/netcoreapp3.1
+/TappitTechnicalTest/API/obj
+/TappitTechnicalTest/API/appsettings.Development.json
+/TappitTechnicalTest/API/API.csproj.user
+/TappitTechnicalTest/API.DataAccess/bin/Debug/netcoreapp3.1
+/TappitTechnicalTest/API.DataAccess/obj
+/TappitTechnicalTest/API.DataAccess.EFCore/bin/Debug/netcoreapp3.1
+/TappitTechnicalTest/API.DataAccess.EFCore/obj
