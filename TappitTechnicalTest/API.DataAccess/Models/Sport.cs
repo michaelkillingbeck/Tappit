@@ -8,13 +8,13 @@ namespace API.DataAccess.Models
     {
         public Sport()
         {
-            FavouriteSports = new HashSet<FavouriteSport>();
+            Favouritesports = new HashSet<Favouritesport>();
         }
 
-        public int SportId { get; set; }
+        public int Sportid { get; set; }
         public string Name { get; set; }
-        public bool IsEnabled { get; set; }
+        public bool Isenabled { get; set; }
 
-        public virtual ICollection<FavouriteSport> FavouriteSports { get; set; }
+        public virtual ICollection<Favouritesport> Favouritesports { get; set; }
     }
 }

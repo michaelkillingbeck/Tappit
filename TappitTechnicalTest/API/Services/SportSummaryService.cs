@@ -22,7 +22,7 @@ namespace API.Services
             return allSports.Select(sport => new SportFavouriteSummaryDTO
             {
                 Name = sport.Name,
-                NumberOfFavourites = sport.FavouriteSports.Count()
+                NumberOfFavourites = sport.Favouritesports.Count()
             });
         }
     }

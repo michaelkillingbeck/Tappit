@@ -26,7 +26,7 @@ namespace API.DataAccess.EFCore.Repositories
         {
             return _context
                 .People
-                .Include(person => person.FavouriteSports)
+                .Include(person => person.Favouritesports)
                 .ThenInclude(favouriteSport => favouriteSport.Sport)
                 .AsNoTracking();
         }
@@ -35,19 +35,19 @@ namespace API.DataAccess.EFCore.Repositories
         {
             return _context
                 .People
-                .Include(person => person.FavouriteSports)
+                .Include(person => person.Favouritesports)
                 .ThenInclude(favouriteSport => favouriteSport.Sport)
-                .FirstOrDefault(person => person.PersonId == id);
+                .FirstOrDefault(person => person.Personid == id);
         }
 
         public Person GetByIdReadOnly(int id)
         {
             return _context
                 .People
-                .Include(person => person.FavouriteSports)
+                .Include(person => person.Favouritesports)
                 .ThenInclude(favouriteSport => favouriteSport.Sport)
                 .AsNoTracking()
-                .FirstOrDefault(person => person.PersonId == id);
+                .FirstOrDefault(person => person.Personid == id);
         }
 
         public void Remove(Person entity)

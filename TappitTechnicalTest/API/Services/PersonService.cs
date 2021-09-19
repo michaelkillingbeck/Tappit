@@ -1,5 +1,4 @@
 ﻿using API.DataAccess.Interfaces;
-using API.DataAccess.Models;
 using API.Interfaces.Services;
 using API.Models.DTOs;
 using System.Collections.Generic;
@@ -25,13 +24,13 @@ namespace API.Services
                 .ToList()
                 .Select(person => new PersonSummaryDTO
                 {
-                    FirstName = person.FirstName,
-                    LastName = person.LastName,
-                    Id = person.PersonId,
-                    IsEnabled = person.IsEnabled,
-                    IsAuthorised = person.IsAuthorised,
-                    IsValid = person.IsValid,
-                    FavouriteSports = person.FavouriteSports.Select(sport => sport.Sport.Name),
+                    FirstName = person.Firstname,
+                    LastName = person.Lastname,
+                    Id = person.Personid,
+                    IsEnabled = person.Isenabled,
+                    IsAuthorised = person.Isauthorised,
+                    IsValid = person.Isvalid,
+                    FavouriteSports = person.Favouritesports.Select(sport => sport.Sport.Name),
                 });
 
             return people;
@@ -42,20 +41,20 @@ namespace API.Services
             var allSports = _sportRepository.GetAllReadOnly().ToList();
             var person = _personRepository
                 .GetById(id);
-            var favouriteSports = person.FavouriteSports;
+            var favouriteSports = person.Favouritesports;
 
             return new PersonDetailDTO
             {
-                FirstName = person.FirstName,
-                LastName = person.LastName,
-                Id = person.PersonId,
-                IsEnabled = person.IsEnabled,
-                IsAuthorised = person.IsAuthorised,
-                IsValid = person.IsValid,
+                FirstName = person.Firstname,
+                LastName = person.Lastname,
+                Id = person.Personid,
+                IsEnabled = person.Isenabled,
+                IsAuthorised = person.Isauthorised,
+                IsValid = person.Isvalid,
                 FavouriteSports = allSports.Select(sport => new FavouriteSportDTO
                 {
-                    Active = favouriteSports.Any(favourite => sport.SportId == favourite.SportId),
-                    Id = sport.SportId,
+                    Active = favouriteSports.Any(favourite => sport.Sportid == favourite.Sportid),
+                    Id = sport.Sportid,
                     Name = sport.Name,
                 })
             };
@@ -65,12 +64,11 @@ namespace API.Services
         {
             var existingEntity = _personRepository.GetById(personToUpdate.Id);
 
-            existingEntity.IsValid = personToUpdate.IsValid;
-            existingEntity.FirstName = personToUpdate.FirstName;
-            existingEntity.LastName = personToUpdate.LastName;
-            existingEntity.IsAuthorised = personToUpdate.IsAuthorised;
-            existingEntity.IsEnabled = personToUpdate.IsEnabled;
-            existingEntity.FavouriteSports = null;
+            existingEntity.Isvalid = personToUpdate.IsValid;
+            existingEntity.Firstname = personToUpdate.FirstName;
+            existingEntity.Lastname = personToUpdate.LastName;
+            existingEntity.Isauthorised = personToUpdate.IsAuthorised;
+            existingEntity.Isenabled = personToUpdate.IsEnabled;
 
             var updatedEntity = _personRepository.Update(existingEntity);
 

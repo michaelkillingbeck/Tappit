@@ -11,3 +11,6 @@
 /TappitTechnicalTest/API.DataAccess/obj
 /TappitTechnicalTest/API.DataAccess.EFCore/bin/Debug/netcoreapp3.1
 /TappitTechnicalTest/API.DataAccess.EFCore/obj
+/TappitTechnicalTest/API.Tests/bin/Debug/netcoreapp3.1
+/TappitTechnicalTest/API.Tests/obj
+/TappitTechnicalTest/TestProject1

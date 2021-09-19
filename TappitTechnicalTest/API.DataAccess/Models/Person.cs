@@ -8,16 +8,16 @@ namespace API.DataAccess.Models
     {
         public Person()
         {
-            FavouriteSports = new HashSet<FavouriteSport>();
+            Favouritesports = new HashSet<Favouritesport>();
         }
 
-        public int PersonId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public bool IsAuthorised { get; set; }
-        public bool IsValid { get; set; }
-        public bool IsEnabled { get; set; }
+        public int Personid { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public bool Isauthorised { get; set; }
+        public bool Isvalid { get; set; }
+        public bool Isenabled { get; set; }
 
-        public virtual ICollection<FavouriteSport> FavouriteSports { get; set; }
+        public virtual ICollection<Favouritesport> Favouritesports { get; set; }
     }
 }

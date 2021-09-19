@@ -26,8 +26,8 @@ namespace API
             services.AddSwaggerGen();
 
             services.AddDbContext<TappitTechnicalTestContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("TappitTechnicalTest")));
+                options.UseNpgsql(
+                    Configuration.GetConnectionString("TappitTechnicalTestPostgres")));
 
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<ISportSummaryService, SportSummaryService>();

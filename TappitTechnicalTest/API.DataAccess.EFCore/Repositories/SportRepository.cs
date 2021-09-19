@@ -1,10 +1,7 @@
 ﻿using API.DataAccess.Interfaces;
 using API.DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace API.DataAccess.EFCore.Repositories
 {
@@ -21,7 +18,7 @@ namespace API.DataAccess.EFCore.Repositories
         {
             return _context
                 .Sports
-                .Include(sport => sport.FavouriteSports)
+                .Include(sport => sport.Favouritesports)
                 .AsNoTracking();
         }
 
@@ -30,7 +27,7 @@ namespace API.DataAccess.EFCore.Repositories
             return _context
                 .Sports
                 .AsNoTracking()
-                .FirstOrDefault(sport => sport.SportId == id);
+                .FirstOrDefault(sport => sport.Sportid == id);
         }
     }
 }

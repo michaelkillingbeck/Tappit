@@ -1,12 +1,11 @@
 ﻿#nullable disable
 
-
 namespace API.DataAccess.Models
 {
-    public partial class FavouriteSport
+    public partial class Favouritesport
     {
-        public int PersonId { get; set; }
-        public int SportId { get; set; }
+        public int Personid { get; set; }
+        public int Sportid { get; set; }
 
         public virtual Person Person { get; set; }
         public virtual Sport Sport { get; set; }
