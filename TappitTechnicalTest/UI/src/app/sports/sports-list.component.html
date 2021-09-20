@@ -1,23 +1,22 @@
-<div class="card">
-    <div class="card-header">
-        {{pageTitle}}
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Number Of Favourites</th>
-                    </tr>
-                </thead>
-                <tbody *ngIf='sportsSummaries.length'>
-                    <tr *ngFor='let sport of sportsSummaries'>
-                        <td>{{sport.name}}</td>
-                        <td>{{sport.numberOfFavourites}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="card-header text-center">
+    {{pageTitle}}
+</div>
+
+<div class="card-body">
+    <div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr class="table-secondary">
+                    <th>Name</th>
+                    <th>Number Of Favourites</th>
+                </tr>
+            </thead>
+            <tbody *ngIf='sportsSummaries.length'>
+                <tr *ngFor='let sport of sportsSummaries'>
+                    <td>{{sport.name}}</td>
+                    <td>{{sport.numberOfFavourites}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

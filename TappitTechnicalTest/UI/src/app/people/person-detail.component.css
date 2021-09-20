@@ -1,0 +1,8 @@
+.form-switch-override {
+    padding-left: 3.2em;
+}
+
+.form-check-input-override:checked {
+    background-color: #54cc11 !important;
+    border-color: #54cc11 !important;
+}

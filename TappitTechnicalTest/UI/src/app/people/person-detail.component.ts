@@ -4,7 +4,8 @@ import { PeopleService } from "./people.service";
 import { IPersonDetail } from "./persondetail";
 
 @Component({
-    templateUrl: './person-detail.component.html'
+    templateUrl: './person-detail.component.html',
+    styleUrls: ['./person-detail.component.css']
 })
 
 export class PersonDetailComponent implements OnInit {
