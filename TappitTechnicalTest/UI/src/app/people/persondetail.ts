@@ -2,7 +2,7 @@ import { IFavouriteSport } from "./favourite-sport";
 import { IPerson } from "./person";
 
 export interface IPersonDetail {
-    favouriteSportsDetails: IFavouriteSport[];
+    favouriteSports: IFavouriteSport[];
     firstName: string;
     id: number;
     isAuthorised: boolean;

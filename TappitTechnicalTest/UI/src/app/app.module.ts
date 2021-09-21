@@ -14,6 +14,7 @@ import { FavouriteSportsList } from './sports/favourite-sports.component';
     AppComponent,
     ConcatSports,
     PeopleListComponent,
+    PersonDetailComponent,
     FavouriteSportsList
   ],
   imports: [
